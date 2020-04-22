@@ -9,3 +9,4 @@ https://martinfowler.com/articles/refactoring-video-store-js/
 
 * refactor#1：第1回リファクタリング実施
 * jestの環境を変更
+* VSCode-Gitの調整
