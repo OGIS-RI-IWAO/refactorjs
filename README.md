@@ -1,0 +1,2 @@
+# refactorjs
+Javascriptによるリファクタリングの練習
