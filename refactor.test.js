@@ -1,4 +1,4 @@
-const refactor = require('./refactor');
+const statement = require('./refactor');
 
 const customer = {
   "name": "martin",
@@ -18,6 +18,6 @@ const exp = 'Rental Record for martin\n\tRan\t3.5\n\tTrois Couleurs: Bleu\t2\nAm
 
 describe('statement について', () => {
   test('レポートが一致すること', () => {
-    expect(refactor.statement(customer, movies)).toEqual(exp);
+    expect(statement(customer, movies)).toEqual(exp);
   });
 });

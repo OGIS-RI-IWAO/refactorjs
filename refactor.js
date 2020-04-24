@@ -1,4 +1,4 @@
-exports.statement = function statement(customer, movies) {
+function statement(customer, movies) {
   let totalAmount = 0;
   let frequentRenterPoints = 0;
   let result = `Rental Record for ${customer.name}\n`;
@@ -40,3 +40,5 @@ exports.statement = function statement(customer, movies) {
 
   return result;
 }
+
+module.exports = statement;
