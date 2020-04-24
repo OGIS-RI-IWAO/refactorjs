@@ -36,9 +36,14 @@ function statement(customer, movies) {
     frequentRenterPoints++;
     // add bonus for a two day new release rental
     if (movieFor(r).code === "new" && r.days > 2) frequentRenterPoints++;
+  }
+  for (let r of customer.rentals) {
 
     //print figures for this rental
     result += `\t${movieFor(r).title}\t${amountFor(r)}\n`;
+  }
+  for (let r of customer.rentals) {
+
     totalAmount += amountFor(r);
   }
 
