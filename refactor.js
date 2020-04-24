@@ -5,26 +5,26 @@ function statement(customer, movies) {
   }
 
   function amountFor(aRental) {
-    let thisAmount = 0;
+    let result = 0;
     // determine amount for each movie
     switch (movieFor(aRental).code) {
       case "regular":
-        thisAmount = 2;
+        result = 2;
         if (aRental.days > 2) {
-          thisAmount += (aRental.days - 2) * 1.5;
+          result += (aRental.days - 2) * 1.5;
         }
         break;
       case "new":
-        thisAmount = aRental.days * 3;
+        result = aRental.days * 3;
         break;
       case "childrens":
-        thisAmount = 1.5;
+        result = 1.5;
         if (aRental.days > 3) {
-          thisAmount += (aRental.days - 3) * 1.5;
+          result += (aRental.days - 3) * 1.5;
         }
         break;
     }
-    return thisAmount;
+    return result;
   }
 
   let totalAmount = 0;
