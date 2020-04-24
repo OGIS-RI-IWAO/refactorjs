@@ -4,30 +4,34 @@ function statement(customer, movies) {
     return movies[aRental.movieID];
   }
 
+  function amountFor(aRental) {
+    let thisAmount = 0;
+    // determine amount for each movie
+    switch (movieFor(aRental).code) {
+      case "regular":
+        thisAmount = 2;
+        if (aRental.days > 2) {
+          thisAmount += (aRental.days - 2) * 1.5;
+        }
+        break;
+      case "new":
+        thisAmount = aRental.days * 3;
+        break;
+      case "childrens":
+        thisAmount = 1.5;
+        if (aRental.days > 3) {
+          thisAmount += (aRental.days - 3) * 1.5;
+        }
+        break;
+    }
+    return thisAmount;
+  }
+
   let totalAmount = 0;
   let frequentRenterPoints = 0;
   let result = `Rental Record for ${customer.name}\n`;
   for (let r of customer.rentals) {
-    let thisAmount = 0;
-
-    // determine amount for each movie
-    switch (movieFor(r).code) {
-      case "regular":
-        thisAmount = 2;
-        if (r.days > 2) {
-          thisAmount += (r.days - 2) * 1.5;
-        }
-        break;
-      case "new":
-        thisAmount = r.days * 3;
-        break;
-      case "childrens":
-        thisAmount = 1.5;
-        if (r.days > 3) {
-          thisAmount += (r.days - 3) * 1.5;
-        }
-        break;
-    }
+    let thisAmount = amountFor(r);
 
     //add frequent renter points
     frequentRenterPoints++;
