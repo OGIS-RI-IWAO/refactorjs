@@ -21,3 +21,11 @@ describe('statement について', () => {
     expect(statement(customer, movies)).toEqual(exp);
   });
 });
+
+// const expHtml = '<H1>Rental Record for <EM>martin</EM></H1><P>\nRan:3.5<BR>\nTrois Couleurs: Bleu:2<BR>\n<P>Amount owed is <EM>5.5</EM><P>\nYou earned <EM>2</EM> frequent renter points<P>\n';
+
+// describe('htmlStatement について', () => {
+//   test('レポートが一致すること', () => {
+//     expect(htmlStatement(customer, movies)).toEqual(exp);
+//   });
+// });
